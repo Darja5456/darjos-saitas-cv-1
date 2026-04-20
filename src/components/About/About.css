@@ -1,0 +1,140 @@
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+.about-image {
+  background: var(--sand);
+  overflow: hidden;
+  min-height: 400px;
+}
+.about-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.about-image .image-placeholder {
+  width: 100%; height: 100%;
+  min-height: 400px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--sand-mid);
+  font-family: 'Tenor Sans', serif;
+  font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+}
+.about-intro {
+  padding: 80px 64px 80px 56px;
+  display: flex; flex-direction: column;
+  justify-content: center; gap: 20px;
+}
+.about-eyebrow {
+  font-family: 'Tenor Sans', serif;
+  font-size: 11px; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--forest);
+}
+.about-script {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(52px, 6vw, 80px);
+  color: var(--burgundy); line-height: 1;
+}
+.about-caps {
+  display: block;
+  font-family: 'Tenor Sans', serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  letter-spacing: 0.1em; color: var(--dark); line-height: 1;
+}
+.about-bio {
+  color: var(--text-light);
+  font-family: 'Jost', sans-serif;
+  font-size: 15px; line-height: 1.85;
+  max-width: 400px;
+}
+.about-bio--extra {
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.btn-more {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 10px 24px;
+  font-family: 'Tenor Sans', serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  width: fit-content;
+  transition: border-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+.btn-more:hover { border-color: var(--burgundy); color: var(--burgundy); }
+
+/* ── SKILLS ─── */
+.skills-section { padding: 80px 48px; border-top: 1px solid var(--border); }
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-script {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 56px; color: var(--sand-mid);
+  line-height: 1; margin-bottom: -12px;
+}
+.section-caps {
+  font-family: 'Tenor Sans', serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  letter-spacing: 0.2em; color: var(--dark);
+  position: relative; z-index: 1;
+}
+.skills-grid {
+  display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 12px;
+  max-width: 640px; margin: 0 auto;
+}
+.skill-tag {
+  border: 1px solid var(--border);
+  padding: 10px 28px;
+  font-family: 'Tenor Sans', serif;
+  font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text);
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+}
+.skill-tag:hover {
+  border-color: var(--burgundy); color: var(--burgundy);
+  background: rgba(107,39,55,0.04);
+}
+
+/* ── VALUES ─── */
+.values-section {
+  background: var(--forest);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.value-item {
+  padding: 60px 40px;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 8px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.value-item:last-child { border-right: none; }
+.value-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px; color: var(--sand-mid); line-height: 1;
+}
+.value-label {
+  font-family: 'Tenor Sans', serif;
+  font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
+}
+
+@media (max-width: 900px) {
+  .about-hero { grid-template-columns: 1fr; }
+  .about-intro { padding: 48px 24px; }
+  .about-bio { max-width: 100%; }
+  .values-section { grid-template-columns: 1fr; }
+  .value-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 40px 20px;
+  }
+  .skills-section { padding: 60px 20px; }
+}
